@@ -7,9 +7,28 @@ app = Flask(__name__)
 
 # Define your endpoints and auth
 API_ENDPOINTS = [
-    {"site": "AFM", "url": "https://afm.example.com/api.aspx?script=Status", "auth": ("admin", "parafait")},
-    {"site": "AWS1-SG", "url": "https://aws1.example.com/api.aspx?script=Status", "auth": ("admin", "parafait")}
+    {
+        "site": "AFM",
+        "url": "https://reports.aeonfantasy.com.my/monitor/getdata.aspx?script=UploadMonitorsyc",
+        "auth": ("admin", "parafait")
+    },
+    {
+        "site": "AWS2-SG",
+        "url": "https://cvmitrawebreports.parafait1.com/Monitor/getdata.aspx?script=UploadMonitorsyc",
+        "auth": ("admin", "parafait")
+    },
+    {
+        "site": "AWS1-SG",
+        "url": "https://cowplayfalcon.parafait.com/Monitor/getdata.aspx?script=UploadMonitorsyc",
+        "auth": ("admin", "parafait")
+    },
+    {
+        "site": "PNL-SG",
+        "url": "https://playnlearnindo.parafait1.com/Monitor/getdata.aspx?script=UploadMonitorsyc",
+        "auth": ("admin", "parafait")
+    }
 ]
+
 
 # Define Prometheus metric
 data_status = Gauge('site_update_status', '1 = fresh, 0 = stale', ['site'])
