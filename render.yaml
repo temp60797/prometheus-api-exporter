@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: prometheus-api-exporter
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn prometheus_api_exporter:app
+    envVars:
+      - key: PORT
+        value: 8000
